@@ -21,11 +21,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-
             opacity: 0;
-            filter: blur(24px) brightness(0.85) contrast(1.1);
-            transform: scale(1.18);
-
+            filter: blur(20px) brightness(0.85) contrast(1.1);
+            transform: scale(1.15);
             transition:
                 opacity 1600ms cubic-bezier(0.22, 1, 0.36, 1),
                 filter 1800ms ease,
@@ -41,12 +39,20 @@
 
         .slide.prev {
             opacity: 0;
-            filter: blur(14px);
+            filter: blur(12px);
             transform: scale(1.05);
             z-index: 1;
         }
 
-        /* DARK CINEMATIC OVERLAY */
+        /* MOBILE PERFORMANCE */
+        @media (max-width: 768px) {
+            .slide {
+                filter: blur(12px);
+                transform: scale(1.08);
+            }
+        }
+
+        /* OVERLAY */
         .overlay {
             position: absolute;
             inset: 0;
@@ -54,20 +60,10 @@
             z-index: 3;
         }
 
-        /* FILM GRAIN */
-        body::after {
-            content: "";
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-            opacity: 0.08;
-            z-index: 50;
-        }
-
+        /* HERO TEXT */
         .hero-text {
             opacity: 0;
-            transform: translateY(40px) scale(0.96);
+            transform: translateY(32px) scale(0.96);
             transition:
                 opacity 1400ms cubic-bezier(0.22, 1, 0.36, 1),
                 transform 1600ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -81,38 +77,35 @@
 </head>
 
 <body>
-    <!-- NAVIGATION -->
+
+    <!-- HEADER -->
     <header
         class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-white/10">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
 
                 <!-- LOGO -->
-                <div class="flex items-center gap-3">
-                    <a class="flex items-center gap-2 text-teal-700 dark:text-teal-300 font-semibold tracking-wide"
-                        href="#">
-                        <svg class="h-9" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M0.41 10.3847C1.14777 7.4194 2.85643 4.7861 5.2639 2.90424C7.6714 1.02234 10.6393 0 13.695 0C16.7507 0 19.7186 1.02234 22.1261 2.90424C24.5336 4.7861 26.2422 7.4194 26.98 10.3847H25.78C23.7557 10.3549 21.7729 10.9599 20.11 12.1147C20.014 12.1842 19.9138 12.2477 19.81 12.3047H19.67C19.5662 12.2477 19.466 12.1842 19.37 12.1147C17.6924 10.9866 15.7166 10.3841 13.695 10.3841C11.6734 10.3841 9.6976 10.9866 8.02 12.1147C7.924 12.1842 7.8238 12.2477 7.72 12.3047H7.58C7.4762 12.2477 7.376 12.1842 7.28 12.1147C5.6171 10.9599 3.6343 10.3549 1.61 10.3847H0.41Z"
-                                fill="currentColor" />
-                        </svg>
-                        <span class="text-lg hidden sm:inline">Museum Islam Indonesia K.H. Hasyim Asy'ari</span>
-                    </a>
-                </div>
+                <a class="flex items-center gap-2 text-teal-700 dark:text-teal-300 font-semibold tracking-wide"
+                    href="#">
+                    <svg class="h-9 shrink-0" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.41 10.3847C1.14777 7.4194 2.85643 4.7861 5.2639 2.90424C7.6714 1.02234 10.6393 0 13.695 0Z"
+                            fill="currentColor" />
+                    </svg>
+                    <span class="hidden sm:inline text-sm md:text-base">
+                        Museum Islam Indonesia K.H. Hasyim Asy'ari
+                    </span>
+                    <span class="sm:hidden text-sm">MINHA</span>
+                </a>
 
-                <!-- NAV -->
-                <nav aria-label="Global" class="hidden md:block">
+                <!-- DESKTOP NAV -->
+                <nav class="hidden md:block">
                     <ul class="flex items-center gap-8 text-sm font-medium">
-                        <li><a class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition"
-                                href="#">About</a></li>
-                        <li><a class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition"
-                                href="#">History</a></li>
-                        <li><a class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition"
-                                href="#">Collections</a></li>
-                        <li><a class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition"
-                                href="#">Exhibitions</a></li>
-                        <li><a class="text-gray-700 dark:text-gray-200 hover:text-teal-600 dark:hover:text-teal-400 transition"
-                                href="#">Blog</a></li>
+                        <li><a class="hover:text-teal-600 transition" href="#">About</a></li>
+                        <li><a class="hover:text-teal-600 transition" href="#">History</a></li>
+                        <li><a class="hover:text-teal-600 transition" href="#">Collections</a></li>
+                        <li><a class="hover:text-teal-600 transition" href="#">Exhibitions</a></li>
+                        <li><a class="hover:text-teal-600 transition" href="#">Blog</a></li>
                     </ul>
                 </nav>
 
@@ -124,17 +117,31 @@
                     </a>
                 </div>
 
+                <!-- MOBILE BUTTON -->
+                <button id="menuBtn" class="md:hidden text-gray-700 dark:text-gray-200 text-2xl">☰</button>
+
             </div>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu"
+            class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-white/10">
+            <ul class="flex flex-col p-4 gap-4 text-sm">
+                <li><a class="hover:text-teal-600 transition" href="#">About</a></li>
+                <li><a class="hover:text-teal-600 transition" href="#">History</a></li>
+                <li><a class="hover:text-teal-600 transition" href="#">Collections</a></li>
+                <li><a class="hover:text-teal-600 transition" href="#">Exhibitions</a></li>
+                <li><a class="hover:text-teal-600 transition" href="#">Blog</a></li>
+            </ul>
         </div>
     </header>
 
     <!-- HERO -->
-    <section class="relative w-full h-screen overflow-hidden text-white">
+    <section class="relative w-full min-h-screen pt-16 overflow-hidden text-white">
 
         <!-- SLIDER -->
         <div class="absolute inset-0 overflow-hidden">
             <div id="slider" class="absolute inset-0">
-
                 <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1600&q=80"
                     class="slide">
                 <img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?auto=format&fit=crop&w=1600&q=80"
@@ -143,75 +150,60 @@
                     class="slide">
                 <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=1600&q=80"
                     class="slide">
-
             </div>
         </div>
 
-        <!-- OVERLAY -->
         <div class="overlay"></div>
 
         <!-- TEXT -->
         <div class="relative z-10 flex items-center justify-center h-full text-center px-6">
-            <div class="max-w-3xl hero-text">
-                <h1 class="text-5xl md:text-7xl font-bold tracking-wide mb-6 opacity-90">
+            <div
+                class="max-w-3xl hero-text flex flex-col justify-center translate-y-10 sm:translate-y-14 md:translate-y-20">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 opacity-95 leading-tight">
                     MINHA
                 </h1>
-                <p class="text-lg md:text-xl opacity-80">
+                <p class="text-base sm:text-lg md:text-xl opacity-85 leading-relaxed">
                     Menjelajahi Jejak Peradaban Islam, Dari Masa Lalu Menuju Masa Depan
                 </p>
             </div>
         </div>
+
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-white/10">
         <div class="mx-auto max-w-7xl px-6 py-16">
 
             <div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
 
-                <!-- BRAND -->
                 <div>
-                    <div class="text-teal-600 dark:text-teal-300 font-semibold text-lg tracking-wide">
-                        Museum Islam Indonesia K.H. Hasyim Asy'ari
-                    </div>
-
-                    <p class="mt-4 max-w-sm text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                    <p class="text-teal-600 font-semibold text-lg">Museum Islam Indonesia</p>
+                    <p class="mt-4 text-sm text-gray-500 leading-relaxed">
                         Preserving heritage, culture, and stories of the archipelago for future generations.
                     </p>
-
-                    <!-- SOCIAL -->
-                    <div class="mt-6 flex gap-5 text-gray-500 dark:text-gray-400">
-                        <a class="hover:text-teal-600 transition" href="#">Facebook</a>
-                        <a class="hover:text-teal-600 transition" href="#">Instagram</a>
-                        <a class="hover:text-teal-600 transition" href="#">Twitter</a>
-                    </div>
                 </div>
 
-                <!-- LINKS -->
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:col-span-2 gap-10 text-sm">
 
                     <div>
-                        <p class="font-medium text-gray-900 dark:text-white mb-4">Explore</p>
-                        <ul class="space-y-2 text-gray-500 dark:text-gray-400">
+                        <p class="font-medium mb-4">Explore</p>
+                        <ul class="space-y-2 text-gray-500">
                             <li><a class="hover:text-teal-600 transition" href="#">About</a></li>
                             <li><a class="hover:text-teal-600 transition" href="#">Collections</a></li>
-                            <li><a class="hover:text-teal-600 transition" href="#">Exhibitions</a></li>
-                            <li><a class="hover:text-teal-600 transition" href="#">Events</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <p class="font-medium text-gray-900 dark:text-white mb-4">Resources</p>
-                        <ul class="space-y-2 text-gray-500 dark:text-gray-400">
+                        <p class="font-medium mb-4">Resources</p>
+                        <ul class="space-y-2 text-gray-500">
                             <li><a class="hover:text-teal-600 transition" href="#">Blog</a></li>
-                            <li><a class="hover:text-teal-600 transition" href="#">Press</a></li>
                             <li><a class="hover:text-teal-600 transition" href="#">Research</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <p class="font-medium text-gray-900 dark:text-white mb-4">Contact</p>
-                        <ul class="space-y-2 text-gray-500 dark:text-gray-400">
+                        <p class="font-medium mb-4">Contact</p>
+                        <ul class="space-y-2 text-gray-500">
                             <li>info@museum.id</li>
                             <li>+62 812-3456-7890</li>
                             <li>Kepanjen Kidul, Indonesia</li>
@@ -221,11 +213,8 @@
                 </div>
             </div>
 
-            <!-- BOTTOM -->
-            <div
-                class="mt-16 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 dark:text-gray-400 gap-4">
-                <p>© 2026 Museum Nusantara. All rights reserved.</p>
-                <p>Designed with cultural respect.</p>
+            <div class="mt-16 text-xs text-gray-500 text-center">
+                © 2026 Museum Nusantara. All rights reserved.
             </div>
 
         </div>
@@ -233,16 +222,16 @@
 
     <script>
         const slides = document.querySelectorAll('.slide');
+        const heroText = document.querySelector('.hero-text');
         let index = 0;
 
-        // RELOAD EFFECT ONLY ON PHOTO
+        // FIRST LOAD
         window.addEventListener("load", () => {
-            setTimeout(() => {
-                slides[0].classList.add("active");
-            }, 200);
+            slides[0].classList.add("active");
+            heroText.classList.add("show");
         });
 
-        // CINEMATIC SLIDER LOOP
+        // SLIDER LOOP
         setInterval(() => {
             slides[index].classList.remove('active');
             slides[index].classList.add('prev');
@@ -252,17 +241,13 @@
 
             setTimeout(() => {
                 document.querySelectorAll('.prev').forEach(s => s.classList.remove('prev'));
-            }, 2400);
+            }, 2000);
 
         }, 7800);
 
-        const heroText = document.querySelector('.hero-text');
-
-        window.addEventListener("load", () => {
-            setTimeout(() => {
-                slides[0].classList.add("active");
-                heroText.classList.add("show");
-            }, 250);
+        // MOBILE MENU
+        document.getElementById("menuBtn").addEventListener("click", () => {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
         });
     </script>
 

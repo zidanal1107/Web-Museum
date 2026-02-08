@@ -5,8 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
+    <link rel="icon" href="assets/LOGO MINHA(1).png" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -73,6 +74,57 @@
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-icons a {
+            font-size: 26px;
+            color: white;
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Warna Brand */
+        .yt:hover {
+            color: #ff0000;
+        }
+
+        .ig:hover {
+            color: #e1306c;
+        }
+
+        .tt:hover {
+            color: #00f2ea;
+        }
+
+        .fb:hover {
+            color: #1877f2;
+        }
+
+        .wa:hover {
+            color: #25D366;
+        }
+
+        .mail:hover {
+            color: #EA4335;
+        }
+
+        .scroll-smooth::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scroll-smooth::-webkit-scrollbar-thumb {
+            background: rgba(100, 100, 100, .3);
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -87,11 +139,7 @@
                 <!-- LOGO -->
                 <a class="flex items-center gap-2 text-teal-700 dark:text-teal-300 font-semibold tracking-wide"
                     href="#">
-                    <svg class="h-9 shrink-0" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.41 10.3847C1.14777 7.4194 2.85643 4.7861 5.2639 2.90424C7.6714 1.02234 10.6393 0 13.695 0Z"
-                            fill="currentColor" />
-                    </svg>
+                    <img src="assets/LOGO MINHA(1).png" alt="MINHA Logo" class="h-9 shrink-0">
                     <span class="hidden sm:inline text-sm md:text-base">
                         Museum Islam Indonesia K.H. Hasyim Asy'ari
                     </span>
@@ -101,11 +149,10 @@
                 <!-- DESKTOP NAV -->
                 <nav class="hidden md:block">
                     <ul class="flex items-center gap-8 text-sm font-medium">
-                        <li><a class="hover:text-teal-600 transition" href="#">About</a></li>
-                        <li><a class="hover:text-teal-600 transition" href="#">History</a></li>
-                        <li><a class="hover:text-teal-600 transition" href="#">Collections</a></li>
-                        <li><a class="hover:text-teal-600 transition" href="#">Exhibitions</a></li>
-                        <li><a class="hover:text-teal-600 transition" href="#">Blog</a></li>
+                        <li><a class="hover:text-teal-600 transition" href="#">Tentang Sejarah Museum</a></li>
+                        <li><a class="hover:text-teal-600 transition" href="#">Koleksi</a></li>
+                        <li><a class="hover:text-teal-600 transition" href="#">Events</a></li>
+                        <li><a class="hover:text-teal-600 transition" href="#">Reservasi Kunjungan</a></li>
                     </ul>
                 </nav>
 
@@ -113,7 +160,7 @@
                 <div class="hidden md:block">
                     <a href="#"
                         class="rounded-full bg-teal-600 px-5 py-2 text-sm font-semibold text-white hover:bg-teal-700 transition shadow-md">
-                        Visit Museum
+                        Kunjungi MINHA
                     </a>
                 </div>
 
@@ -127,11 +174,10 @@
         <div id="mobileMenu"
             class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-white/10">
             <ul class="flex flex-col p-4 gap-4 text-sm">
-                <li><a class="hover:text-teal-600 transition" href="#">About</a></li>
-                <li><a class="hover:text-teal-600 transition" href="#">History</a></li>
-                <li><a class="hover:text-teal-600 transition" href="#">Collections</a></li>
-                <li><a class="hover:text-teal-600 transition" href="#">Exhibitions</a></li>
-                <li><a class="hover:text-teal-600 transition" href="#">Blog</a></li>
+                <li><a class="hover:text-teal-600 transition" href="#">Tentang Sejarah Museum</a></li>
+                <li><a class="hover:text-teal-600 transition" href="#">Koleksi</a></li>
+                <li><a class="hover:text-teal-600 transition" href="#">Events</a></li>
+                <li><a class="hover:text-teal-600 transition" href="#">Reservasi Kunjungan</a></li>
             </ul>
         </div>
     </header>
@@ -142,14 +188,10 @@
         <!-- SLIDER -->
         <div class="absolute inset-0 overflow-hidden">
             <div id="slider" class="absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1600&q=80"
-                    class="slide">
-                <img src="https://images.unsplash.com/photo-1554907984-15263bfd63bd?auto=format&fit=crop&w=1600&q=80"
-                    class="slide">
-                <img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=1600&q=80"
-                    class="slide">
-                <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?auto=format&fit=crop&w=1600&q=80"
-                    class="slide">
+                <img src="assets/intro/museum-luar.JPG" class="slide">
+                <img src="assets/intro/foto-dalam.jpg" class="slide">
+                <img src="assets/intro/IMG_9659.JPG" class="slide">
+                <img src="assets/intro/IMG_20230302_092505.jpg" class="slide">
             </div>
         </div>
 
@@ -160,15 +202,164 @@
             <div
                 class="max-w-3xl hero-text flex flex-col justify-center translate-y-10 sm:translate-y-14 md:translate-y-20">
                 <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 opacity-95 leading-tight">
-                    MINHA
+                    Museum Islam Indonesia KH. Hasyim Asy'ari
                 </h1>
                 <p class="text-base sm:text-lg md:text-xl opacity-85 leading-relaxed">
-                    Menjelajahi Jejak Peradaban Islam, Dari Masa Lalu Menuju Masa Depan
+                    Menjelajahi Jejak Peradaban Islam Nusantara dan Para Ulama Besar Indonesia seperti KH. Hasyim
+                    Asy'ari
                 </p>
             </div>
         </div>
 
     </section>
+
+    <!-- Content -->
+    <div class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4">
+
+        <!-- Card -->
+        <article
+            class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
+
+            <img src="assets/content dashboard/foto-dalam.jpg"
+                alt="Eric Johnson" loading="lazy" class="aspect-video w-full object-cover">
+
+            <div class="flex flex-col flex-grow p-6">
+
+                <header>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        Lorem
+                    </h3>
+
+                    <p class="mt-1 text-sm font-medium text-teal-600 dark:text-teal-400">
+                        Lorem
+                    </p>
+                </header>
+
+                <p class="mt-3 flex-grow text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+
+            </div>
+        </article>
+
+        <!-- DUPLICATE CARD (copy as needed) -->
+        <!-- Repeat card -->
+        <article
+            class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
+
+            <img src="assets/content dashboard/IMG_20230302_092505.jpg"
+                alt="Sarah Williams" loading="lazy" class="aspect-video w-full object-cover">
+
+            <div class="flex flex-col flex-grow p-6">
+
+                <header>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        Lorem
+                    </h3>
+
+                    <p class="mt-1 text-sm font-medium text-teal-600 dark:text-teal-400">
+                        Lorem
+                    </p>
+                </header>
+
+                <p class="mt-3 flex-grow text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+
+            </div>
+        </article>
+        <!-- End Repeat card -->
+
+        <article
+            class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
+
+            <img src="assets/content dashboard/IMG_9659.JPG"
+                alt="Sarah Williams" loading="lazy" class="aspect-video w-full object-cover">
+
+            <div class="flex flex-col flex-grow p-6">
+
+                <header>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        Lorem
+                    </h3>
+
+                    <p class="mt-1 text-sm font-medium text-teal-600 dark:text-teal-400">
+                        Lorem
+                    </p>
+                </header>
+
+                <p class="mt-3 flex-grow text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+
+                <button
+                    class="mt-5 self-start text-sm font-semibold text-teal-600 hover:text-teal-700 transition focus:ring-2 focus:ring-teal-500">
+                    View Profile →
+                </button>
+
+            </div>
+        </article>
+
+        <article
+            class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
+
+            <img src="assets/content dashboard/IMG_20230302_092505.jpg"
+                alt="Sarah Williams" loading="lazy" class="aspect-video w-full object-cover">
+
+            <div class="flex flex-col flex-grow p-6">
+
+                <header>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        Lorem
+                    </h3>
+
+                    <p class="mt-1 text-sm font-medium text-teal-600 dark:text-teal-400">
+                        Lorem
+                    </p>
+                </header>
+
+                <p class="mt-3 flex-grow text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+
+                <button
+                    class="mt-5 self-start text-sm font-semibold text-teal-600 hover:text-teal-700 transition focus:ring-2 focus:ring-teal-500">
+                    View Profile →
+                </button>
+
+            </div>
+        </article>
+
+        <article
+            class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
+
+            <img src="assets/content dashboard/foto-dalam.jpg"
+                alt="Sarah Williams" loading="lazy" class="aspect-video w-full object-cover">
+
+            <div class="flex flex-col flex-grow p-6">
+
+                <header>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        Lorem
+                    </h3>
+
+                    <p class="mt-1 text-sm font-medium text-teal-600 dark:text-teal-400">
+                        Lorem
+                    </p>
+                </header>
+
+                <p class="mt-3 flex-grow text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+
+                <button
+                    class="mt-5 self-start text-sm font-semibold text-teal-600 hover:text-teal-700 transition focus:ring-2 focus:ring-teal-500">
+                    View Profile →
+                </button>
+
+            </div>
+        </article>
+    </div>
 
     <!-- FOOTER -->
     <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-white/10">
@@ -179,34 +370,67 @@
                 <div>
                     <p class="text-teal-600 font-semibold text-lg">Museum Islam Indonesia</p>
                     <p class="mt-4 text-sm text-gray-500 leading-relaxed">
-                        Preserving heritage, culture, and stories of the archipelago for future generations.
+                        Melestarikan peninggalan, budaya, dan cerita penyebaran Islam di Nusantara untuk generasi
+                        berkelanjutan.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:col-span-2 gap-10 text-sm">
 
                     <div>
-                        <p class="font-medium mb-4">Explore</p>
+                        <p class="font-medium mb-4">Jelajahi</p>
                         <ul class="space-y-2 text-gray-500">
-                            <li><a class="hover:text-teal-600 transition" href="#">About</a></li>
-                            <li><a class="hover:text-teal-600 transition" href="#">Collections</a></li>
+                            <li><a class="hover:text-teal-600 transition" href="#">Tentang MINHA</a></li>
+                            <li><a class="hover:text-teal-600 transition" href="#">Koleksi</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <p class="font-medium mb-4">Resources</p>
+                        <p class="font-medium mb-4">Media Sosial MINHA</p>
                         <ul class="space-y-2 text-gray-500">
-                            <li><a class="hover:text-teal-600 transition" href="#">Blog</a></li>
-                            <li><a class="hover:text-teal-600 transition" href="#">Research</a></li>
+                            <li><a class="hover:text-teal-600 transition yt"
+                                    href="https://youtube.com/@museumislamindonesia?si=P3CJQl4lhZ1mvjTk">
+                                    <i class="fa-brands fa-youtube"></i> Youtube</a></li>
+                            <li><a class="hover:text-teal-600 transition ig"
+                                    href="https://www.instagram.com/museum.islam.indonesia?igsh=MXQ0Zmh6Z2tmOXIwaw==">
+                                    <i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                            <li><a class="hover:text-teal-600 transition fb"
+                                    href="https://www.facebook.com/share/17tcwRXYq7/?mibextid=wwXIfr">
+                                    <i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                            <li><a class="hover:text-teal-600 transition tt"
+                                    href="https://www.tiktok.com/@museum.islam.indonesia?_r=1&_t=ZS-93io0jVXray">
+                                    <i class="fa-brands fa-tiktok"></i> Tiktok</a></li>
                         </ul>
                     </div>
 
                     <div>
                         <p class="font-medium mb-4">Contact</p>
                         <ul class="space-y-2 text-gray-500">
-                            <li>info@museum.id</li>
-                            <li>+62 812-3456-7890</li>
-                            <li>Kepanjen Kidul, Indonesia</li>
+                            <!-- Email -->
+                            <li>
+                                <a href="mailto:minha.kemdikbud@gmail.com"
+                                    class="hover:text-teal-600 transition flex items-center gap-2">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    minha.kemdikbud@gmail.com
+                                </a>
+                            </li>
+
+                            <!-- WhatsApp -->
+                            <li>
+                                <a href="https://wa.me/6281249843506" target="_blank"
+                                    class="hover:text-teal-600 transition flex items-center gap-2">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    WhatsApp
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://share.google/ftyuS1pA5raOtERsh" target="_blank"
+                                    class="hover:text-teal-600 transition flex items-center gap-2">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                    Lihat Lokasi di Google Maps
+                                </a>
+                            </li>
                         </ul>
                     </div>
 

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservasi Kunjungan</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" href="assets/LOGO MINHA EDIT MCB.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .social-icons {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-icons a {
+            font-size: 26px;
+            color: white;
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Restore platform hover text colors (keep original branding) */
+        .yt:hover {
+            color: #ff0000;
+        }
+
+        .ig:hover {
+            color: #e1306c;
+        }
+
+        .tt:hover {
+            color: #00f2ea;
+        }
+
+        .fb:hover {
+            color: #1877f2;
+        }
+
+        .wa:hover {
+            color: #25D366;
+        }
+
+        .mail:hover {
+            color: #EA4335;
+        }
+
+        /* Override only background utilities to tosca (leave text colors untouched) */
+        .bg-teal-600 {
+            background-color: var(--tosca) !important;
+        }
+
+        .bg-teal-700 {
+            background-color: var(--tosca-700) !important;
+        }
+
+        .hover\:bg-teal-700:hover {
+            background-color: var(--tosca-700) !important;
+        }
+
+        .focus\:ring-teal-500:focus {
+            box-shadow: 0 0 0 3px var(--tosca-ring) !important;
+        }
+
+        .scroll-smooth::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scroll-smooth::-webkit-scrollbar-thumb {
+            background: rgba(100, 100, 100, .3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="fixed top-0 w-full z-50 backdrop-blur-md bg-[#C7E8DE]/90 border-b border-[#A8D9CD]">
+
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+
+                <!-- LOGO -->
+                <a class="flex items-center gap-2 text-[#665646] font-semibold tracking-wide" href="#">
+                    <img src="assets/LOGO MINHA HITAM.png" alt="MINHA Logo" class="h-9 shrink-0">
+                    <span class="hidden sm:inline text-sm md:text-base">
+                        Museum Islam Indonesia K.H. Hasyim Asy'ari
+                    </span>
+                    <span class="sm:hidden text-sm">MINHA</span>
+                </a>
+
+                <!-- DESKTOP NAV -->
+                <nav class="hidden md:block">
+                    <ul class="flex items-center gap-8 text-sm font-medium text-[#665646]">
+                        <li><a class="hover:text-[#4F4036] transition" href="index.html">Beranda</a></li>
+                        <li><a class="hover:text-[#4F4036] transition" href="sejarah.html">Sejarah Museum</a></li>
+                        <li><a class="hover:text-[#4F4036] transition" href="koleksi.html">Koleksi</a></li>
+                        <li><a class="hover:text-[#4F4036] transition" href="event.html">Events</a></li>
+                        <li><a class="hover:text-[#4F4036] transition" href="#">Reservasi Kunjungan</a></li>
+                    </ul>
+                </nav>
+
+                <!-- CTA -->
+                <div class="hidden md:block">
+                    <a href="#"
+                        class="rounded-full bg-[#665646] px-5 py-2 text-sm font-semibold text-white hover:bg-[#4F4036] transition shadow-md">
+                        Kunjungi MINHA
+                    </a>
+                </div>
+
+                <!-- MOBILE BUTTON -->
+                <button id="menuBtn" class="md:hidden text-[#665646] text-2xl">☰</button>
+
+            </div>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#C7E8DE] border-t border-[#A8D9CD]">
+            <ul class="flex flex-col p-4 gap-4 text-sm text-[#665646]">
+                <li><a class="hover:text-[#4F4036] transition" href="index.html">Beranda</a></li>
+                <li><a class="hover:text-[#4F4036] transition" href="sejarah.html">Sejarah Museum</a></li>
+                <li><a class="hover:text-[#4F4036] transition" href="koleksi.html">Koleksi</a></li>
+                <li><a class="hover:text-[#4F4036] transition" href="event.html">Events</a></li>
+                <li><a class="hover:text-[#4F4036] transition" href="#">Reservasi Kunjungan</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="pt-24">
+        <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center md:gap-10">
+                <div>
+                    <h1 class="text-3xl font-bold mb-4 text-[#665646]">Reservasi Kunjungan ke Museum Islam Indonesia</h1>
+                    <p class="text-gray-700 mb-6">Selamat datang di halaman reservasi kunjungan Museum Islam Indonesia K.H.
+                        Hasyim Asy'ari. Silakan isi formulir di bawah ini untuk merencanakan kunjungan Anda ke museum kami.
+                    </p>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        </div>
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-700">Tanggal Kunjungan</label>
+                            <input type="date" id="date" name="date" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        </div>
+                        <div>
+                            <label for="groupSize" class="block text-sm font-medium text-gray-700">Jumlah Pengunjung</label>
+                            <input type="number" id="groupSize" name="groupSize" min="1" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        </div>
+                        <div>
+                            <label for="notes" class="block text-sm font-medium text-gray-700">Catatan Tambahan</label>
+                            <textarea id="notes" name="notes" rows="4"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-teal-500 focus:ring-teal-500"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="w-full rounded-full bg-teal-600 px-5 py-2 text-sm font-semibold text-white hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition shadow-md">
+                                Kirim Reservasi
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <img src="assets/museum-visit.jpg" alt="Museum Visit"
+                        class="w-full h-auto rounded-md shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="dark:bg-gray-900 border-t border-gray-200 dark:border-white/10">
+        <div class="mx-auto max-w-7xl px-6 py-16">
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-40">
+
+                <!-- BRAND -->
+                <div class="space-y-6">
+
+                    <!-- Logos -->
+                    <div class="flex items-center gap-5">
+
+                        <div class="h-10 flex items-center">
+                            <img src="assets/Logo Kemenkebud RI_2.png" class="h-full object-contain" alt="">
+                        </div>
+
+                        <div class="h-10 w-28 flex items-center justify-center overflow-hidden">
+                            <img src="assets/Logo Co-Branding_Putih.png" class="h-full w-full object-cover scale-100"
+                                alt="">
+                        </div>
+
+                        <div class="h-10 flex items-center">
+                            <img src="assets/LOGO MINHA EDIT MCB.png" class="h-full object-contain" alt="">
+                        </div>
+
+                    </div>
+
+                    <!-- Name -->
+                    <p class="text-teal-600 font-semibold text-lg">
+                        Museum Islam Indonesia
+                    </p>
+
+                    <!-- Description -->
+                    <p class="text-sm text-gray-500 leading-relaxed max-w-md">
+                        Melestarikan peninggalan, budaya, dan cerita penyebaran Islam di Nusantara untuk generasi
+                        berkelanjutan.
+                    </p>
+
+                </div>
+
+                <!-- LINKS GRID -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-50 text-sm">
+
+                    <!-- Explore -->
+                    <div>
+                        <p class="font-medium mb-4 text-white">Jelajahi</p>
+                        <ul class="space-y-2 text-gray-500">
+                            <li><a class="hover:text-teal-600 transition" href="sejarah.html">Tentang MINHA</a></li>
+                            <li><a class="hover:text-teal-600 transition" href="koleksi.html">Koleksi</a></li>
+                            <li><a class="hover:text-teal-600 transition" href="event.html">Events</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Social -->
+                    <div>
+                        <p class="font-medium mb-4 text-white">Media Sosial</p>
+                        <ul class="space-y-2 text-gray-500">
+                            <li><a class="hover:text-teal-600 transition flex items-center gap-2 yt"
+                                    href="https://youtube.com/@museumislamindonesia?si=P3CJQl4lhZ1mvjTk"><i
+                                        class="fa-brands fa-youtube"></i> YouTube</a></li>
+                            <li><a class="hover:text-teal-600 transition flex items-center gap-2 ig"
+                                    href="https://www.instagram.com/museum.islam.indonesia?igsh=MXQ0Zmh6Z2tmOXIwaw=="><i
+                                        class="fa-brands fa-instagram"></i> Instagram</a></li>
+                            <li><a class="hover:text-teal-600 transition flex items-center gap-2 fb"
+                                    href="https://www.facebook.com/share/17tcwRXYq7/?mibextid=wwXIfr"><i
+                                        class="fa-brands fa-facebook"></i> Facebook</a></li>
+                            <li><a class="hover:text-teal-600 transition flex items-center gap-2 tt"
+                                    href="https://www.tiktok.com/@museum.islam.indonesia?_r=1&_t=ZS-93io0jVXray"><i
+                                        class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <p class="font-medium mb-4 text-white">Kontak</p>
+                        <ul class="space-y-2 text-gray-500">
+
+                            <li>
+                                <a href="mailto:minha.kemdikbud@gmail.com"
+                                    class="hover:text-teal-600 transition flex items-center gap-2 mail">
+                                    <i class="fa-solid fa-envelope"></i> Email
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://wa.me/6281249843506" target="_blank"
+                                    class="hover:text-teal-600 transition flex items-center gap-2 wa">
+                                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://share.google/ftyuS1pA5raOtERsh" target="_blank"
+                                    class="hover:text-teal-600 transition flex items-center gap-2">
+                                    <i class="fa-solid fa-map-location-dot"></i> Google Maps
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="mt-14 pt-6 border-t border-gray-200 dark:border-white/10 text-center text-xs text-gray-500">
+                © 2026 Museum Islam Indonesia K.H. Hasyim Asy'ari.
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

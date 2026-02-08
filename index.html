@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="icon" href="assets/LOGO MINHA(1).png" type="image/x-icon" />
+    <link rel="icon" href="assets/LOGO MINHA EDIT MCB.png" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -13,6 +13,16 @@
             margin: 0;
             background: #020617;
             color: white;
+        }
+
+        :root {
+            --tosca: #A1E3D4;
+            /* utama tosca */
+            --tosca-700: #76bfa7;
+            /* darker */
+            --tosca-400: #cfeee6;
+            /* lighter */
+            --tosca-ring: rgba(161, 227, 212, 0.2);
         }
 
         /* SLIDER CINEMATIC */
@@ -92,7 +102,7 @@
             transform: scale(1.2);
         }
 
-        /* Warna Brand */
+        /* Restore platform hover text colors (keep original branding) */
         .yt:hover {
             color: #ff0000;
         }
@@ -117,6 +127,23 @@
             color: #EA4335;
         }
 
+        /* Override only background utilities to tosca (leave text colors untouched) */
+        .bg-teal-600 {
+            background-color: var(--tosca) !important;
+        }
+
+        .bg-teal-700 {
+            background-color: var(--tosca-700) !important;
+        }
+
+        .hover\:bg-teal-700:hover {
+            background-color: var(--tosca-700) !important;
+        }
+
+        .focus\:ring-teal-500:focus {
+            box-shadow: 0 0 0 3px var(--tosca-ring) !important;
+        }
+
         .scroll-smooth::-webkit-scrollbar {
             height: 6px;
         }
@@ -131,15 +158,14 @@
 <body>
 
     <!-- HEADER -->
-    <header
-        class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-white/10">
+    <header class="fixed top-0 w-full z-50 backdrop-blur-md bg-[#C7E8DE]/90 border-b border-[#A8D9CD]">
+
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
 
                 <!-- LOGO -->
-                <a class="flex items-center gap-2 text-teal-700 dark:text-teal-300 font-semibold tracking-wide"
-                    href="#">
-                    <img src="assets/LOGO MINHA(1).png" alt="MINHA Logo" class="h-9 shrink-0">
+                <a class="flex items-center gap-2 text-[#665646] font-semibold tracking-wide" href="#">
+                    <img src="assets/LOGO MINHA HITAM.png" alt="MINHA Logo" class="h-9 shrink-0">
                     <span class="hidden sm:inline text-sm md:text-base">
                         Museum Islam Indonesia K.H. Hasyim Asy'ari
                     </span>
@@ -148,40 +174,40 @@
 
                 <!-- DESKTOP NAV -->
                 <nav class="hidden md:block">
-                    <ul class="flex items-center gap-8 text-sm font-medium">
-                        <li><a class="hover:text-teal-600 transition" href="index.html">Beranda</a></li>
-                        <li><a class="hover:text-teal-600 transition" href="#">Tentang Sejarah Museum</a></li>
-                        <li><a class="hover:text-teal-600 transition" href="#">Koleksi</a></li>
-                        <li><a class="hover:text-teal-600 transition" href="#">Events</a></li>
-                        <li><a class="hover:text-teal-600 transition" href="#">Reservasi Kunjungan</a></li>
+                    <ul class="flex items-center gap-8 text-sm font-medium text-[#665646]">
+                        <li><a class="hover:text-[#4F4036] transition" href="index.html">Beranda</a></li>
+                        <li><a class="hover:text-[#4F4036] transition" href="#">Sejarah Museum</a></li>
+                        <li><a class="hover:text-[#4F4036] transition" href="#">Koleksi</a></li>
+                        <li><a class="hover:text-[#4F4036] transition" href="#">Events</a></li>
+                        <li><a class="hover:text-[#4F4036] transition" href="#">Reservasi Kunjungan</a></li>
                     </ul>
                 </nav>
 
                 <!-- CTA -->
                 <div class="hidden md:block">
                     <a href="#"
-                        class="rounded-full bg-teal-600 px-5 py-2 text-sm font-semibold text-white hover:bg-teal-700 transition shadow-md">
+                        class="rounded-full bg-[#665646] px-5 py-2 text-sm font-semibold text-white hover:bg-[#4F4036] transition shadow-md">
                         Kunjungi MINHA
                     </a>
                 </div>
 
                 <!-- MOBILE BUTTON -->
-                <button id="menuBtn" class="md:hidden text-gray-700 dark:text-gray-200 text-2xl">☰</button>
+                <button id="menuBtn" class="md:hidden text-[#665646] text-2xl">☰</button>
 
             </div>
         </div>
 
         <!-- MOBILE MENU -->
-        <div id="mobileMenu"
-            class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-white/10">
-            <ul class="flex flex-col p-4 gap-4 text-sm">
-                <li><a class="hover:text-teal-600 transition" href="index.html">Beranda</a></li>
-                <li><a class="hover:text-teal-600 transition" href="#">Tentang Sejarah Museum</a></li>
-                <li><a class="hover:text-teal-600 transition" href="#">Koleksi</a></li>
-                <li><a class="hover:text-teal-600 transition" href="#">Events</a></li>
-                <li><a class="hover:text-teal-600 transition" href="#">Reservasi Kunjungan</a></li>
+        <div id="mobileMenu" class="hidden md:hidden bg-[#C7E8DE] border-t border-[#A8D9CD]">
+            <ul class="flex flex-col p-4 gap-4 text-sm text-[#665646]">
+                <li><a class="hover:text-[#4F4036] transition" href="index.html">Beranda</a></li>
+                <li><a class="hover:text-[#4F4036] transition" href="#">Sejarah Museum</a></li>
+                <li><a class="hover:text-[#4F4036] transition" href="#">Koleksi</a></li>
+                <li><a class="hover:text-[#4F4036] transition" href="#">Events</a></li>
+                <li><a class="hover:text-[#4F4036] transition" href="#">Reservasi Kunjungan</a></li>
             </ul>
         </div>
+
     </header>
 
     <!-- HERO -->
@@ -191,9 +217,9 @@
         <div class="absolute inset-0 overflow-hidden">
             <div id="slider" class="absolute inset-0">
                 <img src="assets/intro/museum-luar.JPG" class="slide">
-                <img src="assets/intro/foto-dalam.jpg" class="slide">
-                <img src="assets/intro/IMG_9659.JPG" class="slide">
-                <img src="assets/intro/IMG_20230302_092505.jpg" class="slide">
+                <img src="assets/intro/IMG_9709.JPG" class="slide">
+                <img src="assets/intro/IMG_9764.JPG" class="slide">
+                <img src="assets/intro/IMG_9883.JPG" class="slide">
             </div>
         </div>
 
@@ -222,8 +248,8 @@
         <article
             class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
 
-            <img src="assets/content dashboard/foto-dalam.jpg"
-                alt="Eric Johnson" loading="lazy" class="aspect-video w-full object-cover">
+            <img src="assets/content dashboard/foto-dalam.jpg" alt="Eric Johnson" loading="lazy"
+                class="aspect-video w-full object-cover">
 
             <div class="flex flex-col flex-grow p-6">
 
@@ -249,8 +275,8 @@
         <article
             class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
 
-            <img src="assets/content dashboard/IMG_20230302_092505.jpg"
-                alt="Sarah Williams" loading="lazy" class="aspect-video w-full object-cover">
+            <img src="assets/content dashboard/IMG_20230302_092505.jpg" alt="Sarah Williams" loading="lazy"
+                class="aspect-video w-full object-cover">
 
             <div class="flex flex-col flex-grow p-6">
 
@@ -275,8 +301,8 @@
         <article
             class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
 
-            <img src="assets/content dashboard/IMG_9659.JPG"
-                alt="Sarah Williams" loading="lazy" class="aspect-video w-full object-cover">
+            <img src="assets/content dashboard/IMG_9659.JPG" alt="Sarah Williams" loading="lazy"
+                class="aspect-video w-full object-cover">
 
             <div class="flex flex-col flex-grow p-6">
 
@@ -305,8 +331,8 @@
         <article
             class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
 
-            <img src="assets/content dashboard/IMG_20230302_092505.jpg"
-                alt="Sarah Williams" loading="lazy" class="aspect-video w-full object-cover">
+            <img src="assets/content dashboard/IMG_20230302_092505.jpg" alt="Sarah Williams" loading="lazy"
+                class="aspect-video w-full object-cover">
 
             <div class="flex flex-col flex-grow p-6">
 
@@ -335,8 +361,8 @@
         <article
             class="min-w-[280px] sm:min-w-[320px] md:min-w-[360px] snap-start flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-lg transition">
 
-            <img src="assets/content dashboard/foto-dalam.jpg"
-                alt="Sarah Williams" loading="lazy" class="aspect-video w-full object-cover">
+            <img src="assets/content dashboard/foto-dalam.jpg" alt="Sarah Williams" loading="lazy"
+                class="aspect-video w-full object-cover">
 
             <div class="flex flex-col flex-grow p-6">
 

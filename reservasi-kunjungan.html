@@ -76,6 +76,10 @@
             background: rgba(100, 100, 100, .3);
             border-radius: 10px;
         }
+
+        button {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -145,6 +149,15 @@
             </ul>
         </div>
     </header>
+
+    <!-- TOAST POPUP -->
+    <div id="toast" class="fixed top-6 right-6 z-50 hidden translate-x-10 opacity-0 transition-all duration-300">
+        <div id="toastBox"
+            class="flex items-center gap-3 rounded-lg px-5 py-3 shadow-lg text-white text-sm font-medium">
+            <i id="toastIcon" class="fa-solid fa-check"></i>
+            <span id="toastMessage">Reservasi berhasil dikirim</span>
+        </div>
+    </div>
 
     <!-- Content -->
     <section class="pt-28">
@@ -332,7 +345,45 @@
         // MOBILE MENU
         document.getElementById("menuBtn").addEventListener("click", () => {
             document.getElementById("mobileMenu").classList.toggle("hidden");
-        }); 
+        });
+
+        const form = document.querySelector("form");
+        const toast = document.getElementById("toast");
+        const toastBox = document.getElementById("toastBox");
+        const toastMessage = document.getElementById("toastMessage");
+        const toastIcon = document.getElementById("toastIcon");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            showToast("Reservasi berhasil dikirim!", "success");
+
+            form.reset();
+        });
+
+        function showToast(message, type = "success") {
+            toastMessage.textContent = message;
+
+            toastBox.classList.remove("bg-green-600", "bg-red-600");
+
+            if (type === "success") {
+                toastBox.classList.add("bg-green-600");
+                toastIcon.className = "fa-solid fa-check";
+            } else {
+                toastBox.classList.add("bg-red-600");
+                toastIcon.className = "fa-solid fa-xmark";
+            }
+
+            toast.classList.remove("hidden");
+            setTimeout(() => {
+                toast.classList.remove("translate-x-10", "opacity-0");
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add("translate-x-10", "opacity-0");
+                setTimeout(() => toast.classList.add("hidden"), 300);
+            }, 3000);
+        }
     </script>
 </body>
 
